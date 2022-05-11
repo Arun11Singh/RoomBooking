@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fatch.js">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Arun</h1>
+    <h2 id="apiindia"></h2>
+    <script>
+        fetch('https://api.covid19api.com/summary')
+            .then((apidata) => {
+                return apidata.json();
+            })
+            .then((actualdata) => {
+                //console.log(actualdata.Countries[70])
+                const mydata = actualdata.Countries[99];
+                document.getElementById("apiindia").innerHTML = `${mydata.Country}- of total case- ${mydata.TotalConfirmed} And TotalDeaths:-> ${mydata.TotalDeaths} And TotalRecovered:->${mydata.TotalRecovered}`;
+            })
+            .catch((error) => {
+                console.log(error);
+            }
+            );
+    </script>
+</body>
+
+</html>

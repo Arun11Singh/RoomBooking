@@ -1,0 +1,14 @@
+hr{
+   
+    border: 2px solid black;
+}
+ .img{
+    background-color: antiquewhite;
+}
+
+.rounded:hover{
+    border: 2px solid black;
+    margin: 4px;
+    cursor:grab;
+   
+}
